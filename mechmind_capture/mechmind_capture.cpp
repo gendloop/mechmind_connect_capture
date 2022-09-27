@@ -11,6 +11,31 @@
 
 #include <Windows.h>
 
+void saveTXT(const mmind::api::PointXYZMap& pointXYZMap, const std::string& path)
+{
+	pcl::PointCloud<pcl::PointXYZ> pointCloud(pointXYZMap.width(), pointXYZMap.height());
+	toPCL(pointCloud, pointXYZMap);
+
+	std::fstream out(path, std::ios::out);
+	if (out.fail()) {
+		std::cout << "fail to write " << path << std::endl;
+		return;
+	}
+	for (auto &p : pointCloud.points) {
+		out
+			<< p.x << " "
+			<< p.y << " "
+			<< p.z << " "
+			<< "\n";
+	}
+	out.close();
+
+	std::cout << "PointCloudXYZ has : " << pointCloud.width * pointCloud.height << " data points."
+		<< std::endl;
+	std::cout << "PointCloudXYZ saved to: " << path << std::endl;
+	return;
+}
+
 int main(int argc, char* argv[])
 {
 	commandLineArgs args(argc, argv);
