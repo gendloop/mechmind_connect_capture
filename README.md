@@ -2,9 +2,9 @@
 
 connect & capture & disconnect
 
-* pcl [下载链接](「pcl_1.9.1.exe」https://www.aliyundrive.com/s/YWF1TPe846F 点击链接保存，或者复制本段内容，打开「阿里云盘」APP ，无需下载极速在线查看，视频原画倍速播放。)
+* pcl [下载链接](https://www.aliyundrive.com/s/YWF1TPe846F)
 
-* mecheye sdk [下载链接](「mecheyesdk_1.6.0.exe」https://www.aliyundrive.com/s/fgCW2Bcsf9e 点击链接保存，或者复制本段内容，打开「阿里云盘」APP ，无需下载极速在线查看，视频原画倍速播放。) 
+* mecheye sdk [下载链接](https://www.aliyundrive.com/s/fgCW2Bcsf9e) 
 
 * sdk使用 
   ```md
@@ -26,5 +26,4 @@ connect & capture & disconnect
   $mecheyesdk_root="D:\LibInstall\mecheyesdk\1.6.0"
   start-process -filepath "env.bat" -argumentlist $pcl_root,$mecheyesdk_root
   ```
-
 
