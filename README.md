@@ -15,8 +15,8 @@ connect & capture & disconnect
 
 * 环境配置
 
-  在目录`..\test_mechmind_connect`目录下
-  使用 `shift`+右击 点击 <u>在此处打开powershell窗口</u>
+  在项目源目录，即`env.bat`所在目录下
+  使用 `shift`+右击 点击 <u>在此处打开powershell窗口</u> 
 
   运行
 
