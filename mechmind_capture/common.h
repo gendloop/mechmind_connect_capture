@@ -5,6 +5,7 @@
 #include <direct.h>
 #include <io.h>
 #include <iostream>
+#include <sstream>
 
 std::string GetExePath();
 

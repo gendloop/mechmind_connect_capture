@@ -16,7 +16,7 @@ int main(int argc, char*argv[])
 	std::fstream in("device_info.txt", std::ios::in);
 	if (in.fail()) {
 		std::cout << "fail to read device_info.txt." << std::endl;
-		exit(-2);
+		exit(2);
 	}
 	std::string tmp;
 	int count = 0;
@@ -45,6 +45,7 @@ int main(int argc, char*argv[])
 	}
 	else {
 		std::cout << "No Mech-Eye camera connect." << std::endl;
+		exit(1);
 	}
 
 	system("pause");

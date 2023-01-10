@@ -46,11 +46,10 @@ int main(int argc, char* argv[])
 			"\n\t[--view=<whether to view cloud, true or false> \n"
 			, argv[0]);
 		printf("\n\nexamples:\n");
-		printf("\n\t mechmind_capture.exe --file=\"cloud.txt\" \n");
-		printf("\n\t mechmind_capture.exe --file=\"C:\\Users\\admin\\Desktop\\cloud.txt\" --view=true \n");
+		printf("\n\t mechmind_capture.exe --file=\"cloud.ply\" \n");
+		printf("\n\t mechmind_capture.exe --file=\"C:/Users/admin/Desktop/cloud.ply\" --view=true \n");
 		fflush(stdout);
-		system("pause");
-		exit(0);
+		exit(1);
 	}
 	
 	// connect device
@@ -59,7 +58,7 @@ int main(int argc, char* argv[])
 	std::fstream in("device_info.txt", std::ios::in);
 	if (in.fail()) {
 		std::cout << "fail to read device_info.txt." << std::endl;
-		exit(-2);
+		exit(2);
 	}
 	std::string tmp;
 	int count = 0;
@@ -84,7 +83,7 @@ int main(int argc, char* argv[])
 	auto status = device.connect(device_info);
 	if (!status.isOK()) {
 		printf("Unable to connect. \n");
-		exit(-3);
+		exit(3);
 	}
 
 	// capture
@@ -96,7 +95,8 @@ int main(int argc, char* argv[])
 	if (args.CheckCmdLineFlag("file")) {
 		args.GetCmdLineArgument("file", file);
 	}
-	saveTXT(pointXYZMap, file);
+	//saveTXT(pointXYZMap, file);
+	savePLY(pointXYZMap, file);
 
 	// view
 	if (args.CheckCmdLineFlag("view")) {

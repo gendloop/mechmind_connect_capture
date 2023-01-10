@@ -16,7 +16,7 @@ int main(int argc, char*argv[])
 
 	if (deviceInfoList.empty()) {
 		std::cout << "No Mech-Eye device found." << std::endl;
-		exit(-1);
+		exit(1);
 	}
 
 	printDeviceInfo(deviceInfoList[0]);
@@ -24,7 +24,7 @@ int main(int argc, char*argv[])
 	std::fstream out("device_info.txt", std::ios::out);
 	if (out.fail()) {
 		std::cout << "fail to write device_info.txt." << std::endl;
-		exit(-2);
+		exit(2);
 	}
 	out
 		<< deviceInfoList[0].model << std::endl
@@ -43,9 +43,8 @@ int main(int argc, char*argv[])
 	}
 	else {
 		std::cout << "Mech-Eye camera is unable to connect." << std::endl;
+		exit(3);
 	}
-
-	system("pause");
 
 	return 0;
 }
